@@ -10,6 +10,8 @@ namespace second {
     int a;
 }
 
+// using namespace std;
+
 int main(void) {
     
     first::a = 5;

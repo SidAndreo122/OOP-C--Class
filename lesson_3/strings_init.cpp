@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <random>
 
 int main(void) {
     // initialize string
@@ -21,5 +22,21 @@ int main(void) {
 
     if (str1 == str2){
         std::cout << str4 + str1 << std::endl;
+    }
+
+    // random numbers
+
+    // generate seed
+    std::random_device rd;
+
+    // create a random number engine
+    std::mt19937 engine(rd());
+
+    // define the range
+    std::uniform_int_distribution<int> dist(1, 100);
+
+    for (int i =0; i < 20; i++){
+        int x = dist(engine);
+        std::cout << x << std::endl;
     }
 }

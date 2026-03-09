@@ -15,6 +15,18 @@ public:
         }
     }
 
+    // Copy Constructor
+    Hello(const Hello& other){
+        std::cout << "Copy Constructor for" << this << std::endl;
+        size = other.size;
+        // allocate a new array
+        messages = new std::string[size];
+        // Copy elements from other array
+        for (int i= 0; i < size; i++){
+            messages[i] = other.messages[i];
+        }
+    }
+
     // Destructor
     ~Hello() {
         std::cout << "Destructor for " << this << std::endl;
@@ -45,7 +57,8 @@ int main(void){
     //     Hello(99999);
     // }
 
-    Hello hello3(10);
+    Hello hello3(20);
+    Hello hello4 = hello3;
     
 
     // deallocate memory
